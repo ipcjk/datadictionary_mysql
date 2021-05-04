@@ -49,7 +49,7 @@ sub print_sql_infos() {
 
     for my $table (@tables) {
         print qq ~\n\n<table id ="$table" class="tableiu">
-    <caption>$table ($tables_comment{$table})</caption>
+    <caption>$table (<i>$tables_comment{$table}</i>)</caption>
     <thead><tr>
         <th>NAME</th><th>IS_KEY</th><th>DEFAULT</th><th>CAN_BE_NULL</th><th>PRECISION</th><th>SCALE</th>
         <th>TYPE</th><th>COMMENT</th><th>REF TABLE:COLUMN</th>
@@ -137,12 +137,12 @@ sub html_header() {
     print qq~
 <html>
     <meta charset="utf-8">
-    <title>$dbname</title>
+    <title>Data dictionary for $dbname</title>
     <style>
-        .tableiu { width: 100%; font-size: 0.8em; font-family: sans-serif; margin: 25px 20px; border-collapse: collapse; box-shadow: 5 5 20px rgba(179, 156, 156, 0.15);}
-        .tableiu thead tr { background-color: #009879; color: #ffffff; text-align: left; }
+        .tableiu { width: 90%; font-size: 0.8em; font-family: sans-serif; margin: 25px 20px; border-collapse: collapse; box-shadow: 5 5 20px rgba(179, 156, 156, 0.15);}
+        .tableiu thead tr { background-color: #009879; color: #ffffff; text-align: center; border-top: 1px solid #000000; }
         .tableiu th, .tableiu td { padding: 10px 12px; border-left: 1px solid #000; border-right: 1px solid #000;}
-        .tableiu tbody tr {border-bottom: 1px solid #dd00cc;}
+        .tableiu tbody tr {border-bottom: 1px solid #000000;}
         .tableiu caption { font-size: 120%;}
         .tableiu tbody tr:nth-of-type(even) { background-color: #f4f0f3; }
         .tableiu tbody tr:last-of-type  {border-bottom: 2px solid #008871;}
